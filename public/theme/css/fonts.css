@@ -1,0 +1,240 @@
+/* ==========================================================================
+   Steach Custom Fonts
+   Vazirmatn (Farsi Digits) | Dana | Kalameh
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Vazirmatn FD — default project font with Persian numerals
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn FD';
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Dana — fanum variant with Persian numerals
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-thin.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-extralight.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-light.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-regular.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-medium.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-demibold.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-demibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-bold.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-extrabold.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-extrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-black.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-ultrabold.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-ultrabold.woff') format('woff');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Kalameh
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Kalameh';
+  src: url('../fonts/fonts/Kalameh/WebFonts/_Woff2/KalamehWeb-Thin.woff2') format('woff2'),
+       url('../fonts/fonts/Kalameh/WebFonts/_Woff/KalamehWeb-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kalameh';
+  src: url('../fonts/fonts/Kalameh/WebFonts/_Woff2/KalamehWeb-Regular.woff2') format('woff2'),
+       url('../fonts/fonts/Kalameh/WebFonts/_Woff/KalamehWeb-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kalameh';
+  src: url('../fonts/fonts/Kalameh/WebFonts/_Woff2/KalamehWeb-Bold.woff2') format('woff2'),
+       url('../fonts/fonts/Kalameh/WebFonts/_Woff/KalamehWeb-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kalameh';
+  src: url('../fonts/fonts/Kalameh/WebFonts/_Woff2/KalamehWeb-Black.woff2') format('woff2'),
+       url('../fonts/fonts/Kalameh/WebFonts/_Woff/KalamehWeb-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Default font & utility classes
+   -------------------------------------------------------------------------- */
+:root {
+  --bs-font-sans-serif: 'Vazirmatn FD', Tahoma, sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+}
+
+html,
+body {
+  font-family: 'Vazirmatn FD', Tahoma, sans-serif;
+}
+
+.page-body-wrapper .card .sub-title,
+.dropdown .dropdown-menu,
+.bootstrap-touchspin .input-group,
+.user-profile .follow .follow-num,
+.monthly-profit .apexcharts-canvas .apexcharts-datalabels-group .apexcharts-datalabel-value {
+  font-family: 'Vazirmatn FD', Tahoma, sans-serif;
+}
+
+.dana {
+  font-family: 'Dana', 'Vazirmatn FD', Tahoma, sans-serif !important;
+}
+
+.kalame {
+  font-family: 'Kalameh', 'Vazirmatn FD', Tahoma, sans-serif !important;
+}

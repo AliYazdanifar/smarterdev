@@ -1,0 +1,22 @@
+.admin-persian-datepicker .js-persian-datepicker {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.datepicker-plot-area {
+    z-index: 2000 !important;
+    font-family: inherit;
+    direction: rtl;
+}
+
+body.dark-only .admin-persian-datepicker .js-persian-datepicker {
+    background-color: #1d1e26;
+    color: #fff;
+    border-color: #374558;
+}
+
+body.dark-only .datepicker-plot-area {
+    background: #262932;
+    color: #fff;
+    border-color: #374558;
+}

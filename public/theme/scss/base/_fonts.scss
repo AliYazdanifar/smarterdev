@@ -1,0 +1,123 @@
+/**=====================
+    Custom Fonts — Steach
+==========================**/
+
+$font-vazir: 'Vazirmatn FD';
+$font-dana: 'Dana';
+$font-kalame: 'Kalameh';
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-vazir;
+  src: url('../fonts/fonts/vazirmatn-33.003/misc/Farsi-Digits/fonts/webfonts/Vazirmatn-FD-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-dana;
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-regular.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-dana;
+  src: url('../fonts/fonts/Dana/woff2/dana-fanum-bold.woff2') format('woff2'),
+       url('../fonts/fonts/Dana/woff/dana-fanum-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-kalame;
+  src: url('../fonts/fonts/Kalameh/WebFonts/_Woff2/KalamehWeb-Regular.woff2') format('woff2'),
+       url('../fonts/fonts/Kalameh/WebFonts/_Woff/KalamehWeb-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-kalame;
+  src: url('../fonts/fonts/Kalameh/WebFonts/_Woff2/KalamehWeb-Bold.woff2') format('woff2'),
+       url('../fonts/fonts/Kalameh/WebFonts/_Woff/KalamehWeb-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.dana {
+  font-family: $font-dana, $font-vazir, Tahoma, sans-serif !important;
+}
+
+.kalame {
+  font-family: $font-kalame, $font-vazir, Tahoma, sans-serif !important;
+}
