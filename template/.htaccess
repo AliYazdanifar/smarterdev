@@ -1,0 +1,8 @@
+# Apache only (not needed for `php -S ... router.php`).
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /404.php
+RewriteEngine On
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+# Keep source folders private
+RewriteRule ^(config|includes|content)/ - [F,L]

@@ -1,0 +1,10 @@
+# SmarterDev — robots.txt (update the domain if it changes)
+User-agent: *
+Allow: /
+Disallow: /login.php
+Disallow: /register.php
+Disallow: /config/
+Disallow: /includes/
+Disallow: /content/
+
+Sitemap: https://smarterdev.ir/sitemap.xml
