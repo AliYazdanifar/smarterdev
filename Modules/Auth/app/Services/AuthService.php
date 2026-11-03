@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Modules\Auth\Exceptions\OtpAlreadySentException;
 use Modules\Auth\Exceptions\PhoneNotVerifiedException;
+use Modules\Reporting\Services\AudienceAttributionRecorder;
 use Modules\User\Events\UserAuthenticated;
 use Modules\User\Models\User;
-use Modules\Reporting\Services\AudienceAttributionRecorder;
 use Modules\User\Services\UserImpersonationService;
 use Modules\User\Services\UserService;
 use Modules\User\Support\UserImpersonation;
@@ -169,7 +169,11 @@ class AuthService
     ): array {
         $token = $user->createToken($tokenName, ['*'], $expiresAt)->plainTextToken;
 
-        $user->loadMissing(['character', 'level', 'media']);
+        $user->loadMissing(array_filter([
+            method_exists($user, 'character') ? 'character' : null,
+            method_exists($user, 'level') ? 'level' : null,
+            method_exists($user, 'media') ? 'media' : null,
+        ]));
 
         return [
             'user' => $user,

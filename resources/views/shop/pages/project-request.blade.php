@@ -24,14 +24,10 @@
 <div class="wiz-shell">
   <div class="container wiz-container">
 
-    <!-- Step 0 · Authentication gate (prototype) -->
+    <!-- Step 0 · Authentication gate -->
     <section class="gate surface" data-gate aria-labelledby="gate-title"@if($entered) hidden @endif>
       <span class="gate__icon" aria-hidden="true"><i class="bi bi-person-lock"></i></span>
-      @if($entered)
-        <h2 id="gate-title" class="h2">ثبت درخواست پروژه</h2>
-      @else
-        <h1 id="gate-title" class="h2">ثبت درخواست پروژه</h1>
-      @endif
+      <h1 id="gate-title" class="h2">ثبت درخواست پروژه</h1>
       <p>برای پیگیری وضعیت پروژه و گفت‌وگو دربارهٔ آن، به یک حساب کاربری نیاز دارید. پس از ورود، دوباره به فرم درخواست برمی‌گردید.</p>
       <ul class="check-list gate__benefits">
         <li>پیگیری وضعیت درخواست</li>
@@ -41,11 +37,6 @@
       <div class="gate__actions">
         <a class="btn-sd btn-sd--primary" href="{{ route('login', ['next' => 'project-request']) }}">ورود <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i></a>
         <a class="btn-sd btn-sd--ghost" href="{{ route('register', ['next' => 'project-request']) }}">ایجاد حساب کاربری</a>
-      </div>
-      <div class="notice mt-4 text-start">
-        <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
-        <p><strong>نسخهٔ نمایشی:</strong> ورود و ثبت‌نام در این پیش‌نمایش استاتیک واقعی نیست. برای دیدن فرم می‌توانید به‌صورت نمایشی ادامه دهید.
-          <a href="{{ route('project-request', ['entry' => 'demo']) }}">ادامه در حالت نمایشی</a></p>
       </div>
     </section>
 
@@ -63,9 +54,9 @@
         <a class="btn-sd btn-sd--ghost btn-sd--sm" href="{{ route('home') }}"><i class="bi bi-x-lg" aria-hidden="true"></i>انصراف</a>
       </div>
 
-      <div class="notice mb-4">
-        <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
-        <p><strong>حالت نمایشی:</strong> این فرم فقط در مرورگر شما کار می‌کند. هیچ اطلاعاتی ارسال، ذخیره یا ثبت نمی‌شود.</p>
+      <div class="notice mb-4" data-hide-when-authenticated>
+        <i class="bi bi-info-circle" aria-hidden="true"></i>
+        <p>پس از تکمیل فرم، درخواست شما برای بررسی ثبت می‌شود. بارگذاری فایل در این نسخه هنوز در حال تکمیل است.</p>
       </div>
 
       <div class="wiz-card">
@@ -268,4 +259,7 @@
   </div>
 </div>
 </main>
+@push('scripts')
+<script>window.SD_AUTH={apiBase:@json(url('/api/v1/auth')),projectRequestUrl:@json(route('project-request'))};</script>
+@endpush
 @endsection

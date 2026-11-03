@@ -89,10 +89,14 @@ class AuthUserResource extends JsonResource
 
     private function hasCharacter(): bool
     {
+        if (! method_exists($this->resource, 'character')) {
+            return false;
+        }
+
         if ($this->relationLoaded('character')) {
             return $this->character !== null;
         }
 
-        return $this->character()->exists();
+        return false;
     }
 }

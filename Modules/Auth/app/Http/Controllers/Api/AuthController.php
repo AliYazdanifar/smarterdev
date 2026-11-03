@@ -154,7 +154,11 @@ class AuthController extends Controller
     public function me(Request $request): JsonResponse
     {
         $user = $request->user();
-        $user->load(['character', 'level', 'media']);
+        $user->loadMissing(array_filter([
+            method_exists($user, 'character') ? 'character' : null,
+            method_exists($user, 'level') ? 'level' : null,
+            method_exists($user, 'media') ? 'media' : null,
+        ]));
 
         return ApiResponse::success(
             (new AuthUserResource($user))->impersonating($user->isImpersonating())

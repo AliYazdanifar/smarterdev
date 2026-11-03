@@ -162,14 +162,14 @@ class PageController extends Controller
 
     public function projectRequest(Request $request): View
     {
-        $entered = $request->query('entry') === 'demo';
+        $entered = false;
         $wizard = config('project_request');
         $page = sd_page([
             'title' => 'ثبت درخواست پروژه',
             'description' => 'درخواست پروژهٔ نرم‌افزار، ایجنت هوش مصنوعی، اتوماسیون یا تعمیر پروژه را در چند مرحلهٔ ساده ثبت کنید تا نیاز شما بررسی شود.',
             'route' => 'project-request',
             'css' => ['pages/wizard.css'],
-            'js' => ['wizard.js'],
+            'js' => ['auth.js', 'project-request-auth.js', 'wizard.js'],
             'body_class' => 'page-wizard',
             'mobile_cta' => false,
             'breadcrumbs' => [['ثبت درخواست پروژه', null]],
@@ -182,10 +182,10 @@ class PageController extends Controller
     {
         $page = sd_page([
             'title' => 'ورود به حساب کاربری',
-            'description' => 'صفحهٔ نمایشی ورود به حساب کاربری SmarterDev برای پیگیری درخواست‌های پروژه.',
+            'description' => 'ورود به حساب کاربری SmarterDev برای پیگیری درخواست‌های پروژه.',
             'route' => 'login',
             'css' => ['pages/wizard.css'],
-            'js' => ['forms.js'],
+            'js' => [],
             'noindex' => true,
             'mobile_cta' => false,
             'breadcrumbs' => [['ورود به حساب کاربری', null]],
@@ -198,10 +198,10 @@ class PageController extends Controller
     {
         $page = sd_page([
             'title' => 'ایجاد حساب کاربری',
-            'description' => 'صفحهٔ نمایشی ایجاد حساب کاربری در SmarterDev برای ثبت و پیگیری درخواست پروژه.',
+            'description' => 'ایجاد حساب کاربری در SmarterDev برای ثبت و پیگیری درخواست پروژه.',
             'route' => 'register',
             'css' => ['pages/wizard.css'],
-            'js' => ['forms.js'],
+            'js' => [],
             'noindex' => true,
             'mobile_cta' => false,
             'breadcrumbs' => [['ایجاد حساب کاربری', null]],
