@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Layout — header, mobile drawer, footer, breadcrumb, mobile CTA bar
+   ========================================================================== */
+
+/* ---- Header -------------------------------------------------------------- */
+.site-header {
+  position: sticky; inset-block-start: 0; z-index: 1030;
+  border-block-end: 1px solid transparent;
+  transition: background-color .3s ease, border-color .3s ease;
+}
+.site-header.is-scrolled { background: var(--sd-header-bg); border-block-end-color: var(--sd-border); }
+.site-header__bar { display: flex; align-items: center; gap: 1rem; min-block-size: var(--sd-header-h); }
+.site-header__actions { display: flex; align-items: center; gap: .6rem; margin-inline-start: auto; }
+
+.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--sd-text); }
+.brand:hover { color: var(--sd-text); }
+.brand__mark {
+  display: inline-grid; place-items: center; inline-size: 2.25rem; block-size: 2.25rem; flex: none;
+  border-radius: .7rem; background: linear-gradient(140deg, #6C7BFF 0%, #3D4BE0 55%, #1FB7D6 130%);
+  box-shadow: 0 8px 20px -10px var(--sd-accent), inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+.brand__mark svg { inline-size: 1.4rem; block-size: 1.4rem; }
+.brand__word { font: 800 1.2rem/1 var(--sd-font); letter-spacing: -.02em; direction: ltr; unicode-bidi: isolate; }
+.brand__word b { font-weight: 800; color: var(--sd-cyan-text); }
+
+.site-nav { margin-inline: auto; }
+.site-nav ul { display: flex; gap: .25rem; margin: 0; padding: 0; list-style: none; }
+.site-nav a {
+  position: relative; display: inline-flex; align-items: center; min-block-size: 2.75rem; padding-inline: .95rem;
+  font-weight: 600; font-size: .95rem; color: var(--sd-muted); border-radius: .7rem;
+}
+.site-nav a::after {
+  content: ""; position: absolute; inset-inline: .95rem; inset-block-end: .35rem; block-size: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--sd-accent), var(--sd-accent-2)); transform: scaleX(0); transition: transform .3s var(--sd-ease);
+}
+.site-nav a:hover, .site-nav a[aria-current] { color: var(--sd-text); }
+.site-nav a:hover::after, .site-nav a[aria-current]::after { transform: scaleX(1); }
+
+.theme-toggle .bi-sun-fill { display: none; }
+[data-theme="light"] .theme-toggle .bi-sun-fill { display: inline; }
+[data-theme="light"] .theme-toggle .bi-moon-stars-fill { display: none; }
+
+/* ---- Mobile drawer ------------------------------------------------------- */
+.drawer-overlay {
+  position: fixed; inset: 0; z-index: 1040; background: rgba(3, 6, 12, .62);
+  opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease;
+}
+.drawer-overlay.is-open { opacity: 1; visibility: visible; }
+.drawer {
+  position: fixed; inset-block: 0; inset-inline-start: 0; z-index: 1050;
+  inline-size: min(88vw, 22rem); block-size: 100%; display: flex; flex-direction: column; gap: 1.5rem;
+  padding: 1.1rem 1.25rem 1.5rem; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--sd-bg-2); border-inline-end: 1px solid var(--sd-border-strong);
+  transform: translateX(100%); visibility: hidden;
+  transition: transform .38s var(--sd-ease), visibility .38s;
+}
+.drawer.is-open { transform: none; visibility: visible; }
+.drawer__top { display: flex; align-items: center; justify-content: space-between; }
+.drawer__nav { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; }
+.drawer__nav a {
+  display: flex; align-items: center; gap: .85rem; min-block-size: 3.25rem; padding-inline: .9rem;
+  font-weight: 700; font-size: 1.05rem; color: var(--sd-text); border-radius: .85rem; border: 1px solid transparent;
+}
+.drawer__nav a i { color: var(--sd-accent-text); font-size: 1.15rem; }
+.drawer__nav a:hover, .drawer__nav a[aria-current] { background: var(--sd-accent-soft); border-color: var(--sd-border); }
+.drawer__foot { margin-block-start: auto; display: grid; gap: .9rem; }
+.drawer__note { font-size: .85rem; margin: 0; line-height: 1.8; }
+html.has-drawer, html.has-drawer body { overflow: hidden; }
+
+/* ---- Sticky mobile CTA --------------------------------------------------- */
+.mobile-cta {
+  position: fixed; inset-inline: .75rem; inset-block-end: calc(.75rem + env(safe-area-inset-bottom, 0px)); z-index: 1020;
+  transform: translateY(160%); transition: transform .4s var(--sd-ease);
+}
+.mobile-cta.is-visible { transform: none; }
+.mobile-cta .btn-sd { box-shadow: 0 16px 36px -10px rgba(0, 0, 0, .6), 0 10px 28px -12px var(--sd-accent); }
+
+/* ---- Breadcrumb ---------------------------------------------------------- */
+.crumbs { margin-block-end: 1.25rem; }
+.crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: .15rem .5rem; list-style: none; margin: 0; padding: 0; font-size: .875rem; }
+.crumbs li { display: inline-flex; align-items: center; gap: .5rem; color: var(--sd-faint); }
+.crumbs li + li::before { content: "\F284"; font-family: "bootstrap-icons"; font-size: .7rem; color: var(--sd-faint); }
+.crumbs a { color: var(--sd-muted); }
+.crumbs a:hover { color: var(--sd-text); }
+.crumbs [aria-current] { color: var(--sd-text); }
+
+/* ---- Footer -------------------------------------------------------------- */
+.site-footer { margin-block-start: 0; padding-block: clamp(3rem, 6vw, 4.5rem) 1.5rem; background: var(--sd-bg-2); border-block-start: 1px solid var(--sd-border); }
+.site-footer h2 { font-size: .95rem; font-weight: 700; color: var(--sd-text); margin-block-end: 1rem; }
+.footer-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; }
+.footer-list a, .footer-list span { display: inline-flex; align-items: center; min-block-size: 2.4rem; color: var(--sd-muted); font-size: .95rem; }
+.footer-list a:hover { color: var(--sd-text); }
+.footer-list .is-placeholder { color: var(--sd-faint); }
+.footer-list i { margin-inline-end: .6rem; color: var(--sd-accent-text); }
+.footer-about { max-inline-size: 26rem; font-size: .95rem; margin-block: 1rem 0; }
+.footer-bottom { margin-block-start: 2.5rem; padding-block-start: 1.25rem; border-block-start: 1px solid var(--sd-border); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 1.5rem; font-size: .875rem; color: var(--sd-faint); }
+.footer-bottom a { color: var(--sd-muted); }
+.footer-social { display: flex; gap: .5rem; margin-block-start: 1.25rem; }
