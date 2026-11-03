@@ -1,59 +1,198 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Laravel Project Standard
 
-## About Laravel
+A reusable Laravel engineering standard for building modular, service-based and maintainable applications.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Philosophy
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Modular + Service-Based + Laravel Best Practices + Minimal Complexity**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This repository provides reusable development standards for Cursor and Claude Code.
 
-## Learning Laravel
+## Architecture
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- Modular Monolith
+- Nwidart Laravel Modules
+- Service Layer
+- Thin Controllers
+- FormRequest
+- JsonResource
+- Eloquent ORM
+- Dependency Injection
+- Route Model Binding
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Frontend
 
-## Laravel Sponsors
+- Blade as the default rendering engine
+- Livewire for server-driven interactions
+- Vue.js 3 for complex interfaces
+- Alpine.js for lightweight interactions
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Packages
 
-### Premium Partners
+- Spatie Laravel Permission
+- Spatie Laravel Media Library
+- Spatie Laravel Activitylog
+- Laravel Sanctum
+- Livewire
+- Pest
+- Pint
+- Larastan
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+See PACKAGES.md.
 
-## Contributing
+## Repository Structure
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```text
+.cursor/rules/
+.claude/rules/
+docs/
+scripts/
+CLAUDE.md
+PACKAGES.md
+README.md
+```
 
-## Code of Conduct
+## Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Option 1: Installation Script
 
-## Security Vulnerabilities
+```bash
+chmod +x scripts/install.sh
+./scripts/install.sh /path/to/laravel-project
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Option 2: Manual Installation
+
+Copy these files into your Laravel project:
+
+- .cursor/
+- .claude/
+- CLAUDE.md
+- PACKAGES.md
+- docs/
+
+For Windows, copy the folders using File Explorer.
+
+## Cursor
+
+Open the Laravel project in Cursor.
+
+The rules under `.cursor/rules/` are automatically applied.
+
+## Claude Code
+
+Place CLAUDE.md in the Laravel project root.
+
+Claude Code will use the project instructions.
+
+## Starting a New Project
+
+1. Create a Laravel project.
+2. Install the required packages from PACKAGES.md.
+3. Install this standard.
+4. Ask Cursor or Claude to inspect the project.
+5. Follow the architecture standards during development.
+
+## Important
+
+This repository provides architectural standards, not a forced framework.
+
+Not every project needs Vue, every module needs every directory, or every operation needs an Action class.
+
+Choose the simplest solution that meets the requirements.
+
+## Versioning
+
+Use Semantic Versioning:
+
+- MAJOR: Breaking changes to standards.
+- MINOR: New standards or capabilities.
+- PATCH: Documentation corrections and improvements.
+
+Maintain a CHANGELOG.md when releasing versions.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT
+```
+
+## ۱۴. فایل `scripts/install.sh`
+
+این اسکریپت قوانین را وارد پروژه موجود می‌کند و اگر فایلی از قبل وجود داشته باشد، آن را بدون اجازه جایگزین نمی‌کند.
+
+<text color="success" weight="medium" size="sm">FILE 13 — scripts/install.sh</text>
+
+<CodeBlock language="bash" editable>
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+TARGET_DIR="${1:-}"
+
+if [[ -z "$TARGET_DIR" ]]; then
+    echo "Usage: ./scripts/install.sh /path/to/laravel-project"
+    exit 1
+fi
+
+TARGET_DIR="$(cd "$TARGET_DIR" && pwd)"
+
+if [[ ! -f "$TARGET_DIR/artisan" || ! -f "$TARGET_DIR/composer.json" ]]; then
+    echo "Error: Target is not a valid Laravel project."
+    exit 1
+fi
+
+echo "Installing Laravel Project Standard..."
+echo "Target: $TARGET_DIR"
+
+install_file() {
+    local source="$1"
+    local target="$2"
+
+    if [[ ! -f "$source" ]]; then
+        return
+    fi
+
+    mkdir -p "$(dirname "$target")"
+
+    if [[ -e "$target" ]]; then
+        echo "Skipped existing file: $target"
+        return
+    fi
+
+    cp "$source" "$target"
+    echo "Installed: $target"
+}
+
+install_directory() {
+    local source="$1"
+    local target="$2"
+
+    if [[ ! -d "$source" ]]; then
+        return
+    fi
+
+    mkdir -p "$target"
+
+    while IFS= read -r -d '' file; do
+        local relative="${file#"$source"/}"
+        install_file "$file" "$target/$relative"
+    done < <(find "$source" -type f -print0)
+}
+
+install_directory "$SOURCE_DIR/.cursor" "$TARGET_DIR/.cursor"
+install_directory "$SOURCE_DIR/.claude" "$TARGET_DIR/.claude"
+install_directory "$SOURCE_DIR/docs" "$TARGET_DIR/docs"
+
+install_file "$SOURCE_DIR/CLAUDE.md" "$TARGET_DIR/CLAUDE.md"
+install_file "$SOURCE_DIR/PACKAGES.md" "$TARGET_DIR/PACKAGES.md"
+
+echo ""
+echo "Installation completed."
+echo "Existing files were preserved."
+echo ""
+echo "Next steps:"
+echo "1. Review PACKAGES.md"
+echo "2. Install required dependencies."
+echo "3. Open the project in Cursor or Claude Code."
